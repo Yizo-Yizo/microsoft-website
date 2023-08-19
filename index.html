@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #000;
+      background-color: #fff;
+    }
+    .containers {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: .75rem;
+        padding-left: .75rem;
+      }
+      .navbar-brand img {
+        width: 108px;
+        height: 23px;
+        margin-bottom: 6px;
+      }
+      
+    .navbar{
+      list-style-type: none;
+      color: #262626;
+      background-color: #fff!important;
+    }
+    .nav-right .dropdown-menu {
+      width: 1230px;
+      margin-left: -1020%;
+      height: auto;
+      background-color: #f2f2f2;
+      border-radius: 0;
+    }
+    .nav-right {
+      position: relative;
+    }
+    #cancel-btn {
+      background: transparent;
+      border: 1px solid currentColor;
+      display: block;
+      margin-left: 5px;
+      position: relative;
+      transition: color .1s,background-color .1s;
+      white-space: nowrap;
+      width: 75px;
+      outline-offset: -2px;
+    }
+    #search-icon {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    #search-bar {
+      width: 100%;
+    }
+    #search-bar input[type="text"] {
+      width: 100%;
+    }
+    .dropdown-menu li {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .dropdown-menu a {
+      font-size: 13px!important;
+      color: #262626!important;
+    }
+    .dropdown-menu p {
+      font-size: 13px!important;
+      color: #000000;
+      font-weight: 600;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .navbar-collapse .nav-right > i > a, .navbar-collapse .nav-right .dropdown > a {
+      font-size: 13px!important;
+      font-style: normal;
+    }
+    .navbar-collapse .nav-right > i > a:hover, .navbar-collapse .nav-right .dropdown > a:hover, .navbar-collapse > ul li > a:hover {
+      text-decoration: underline;
+    }
+    .navbar-collapse .nav-right .dropdown {
+      padding-top: 11px;
+    }
+    .navbar-toggler {
+      border: none;
+      color: white;
+      padding-left: 0;
+    }
+    .icons {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+    .slider, .navbar {
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+      margin-bottom: 40px;
+    }
+    .cards img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .cards h3 {
+      margin-bottom: 5px;
+    }
+    .cards a {
+      display: inline-block;
+      padding-top: 15px;
+      color: #0067b8;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .cards a:hover {
+      text-decoration: underline;
+    }
+    .cards a:hover i {
+      margin-left: 10px;
+    }
+    .nav-item {
+      font-size: 13px;
+      color: #262626
+    }
+    .mb-5, .my-5 {
+      margin-bottom: 3rem!important;
+    }
+
+    .row-cols-1>* {
+      flex: 0 0 100%!important;
+      max-width: 100%!important;
+    }
+
+    .col {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 517px!important;
+    }
+    .products img {
+      height: 40px;
+      width: 40px;
+      vertical-align: middle;
+    }
+    .products > .containers > .row > .col {
+      width: auto;
+    }
+    .products a {
+      white-space: nowrap;
+    }
+    .card {
+      --bs-card-border-color: none;
+    }
+    .card img {
+      min-height: 1px;
+    }
+    .card-header {
+      flex: 0 1 3rem;
+      background-color: white;
+    }
+    .pt-3, .py-3 {
+      padding-top: 1rem!important;
+    }
+    .card-body {
+      position: relative;
+    }
+    .card-footer {
+      background-color: white;
+    }
+    .card-footer > a {
+      text-decoration: none;
+    }
+    .h3, h3 {
+      font-size: 1.3125rem;
+      margin-bottom: 0.5rem;
+    }
+    .xbox .card-title, .slider .card-title {
+      font-size: 29px;
+    }
+    .xbox .card-text, .slider .card-text {
+      font-size: 16px;
+    }
+    .xbox .card-body, .slider .card-body {
+      margin-top: 5%;
+      padding-left: 8%;
+    }
+    #backup-button {
+      position: sticky;
+      bottom: 0;
+      display: flex!important;
+      justify-content: flex-end!important;
+      padding: 0.75rem!important;
+      opacity: 0;
+      transition: opacity 1s cubic-bezier(.19,1,.22,1)!important;
+      pointer-events: none;
+    }
+    #backup-button > button {
+      font-weight: 600;
+      border: .125rem solid transparent;
+      border-radius: .125rem;
+      background-color: inherit;
+      color: inherit;
+      text-decoration: none;
+      padding: .625rem .75rem;
+      font-size: 1rem;
+      line-height: 1;
+      cursor: pointer;
+      background-color: transparent;
+      color: #000!important;
+      background-image: linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15));
+    }
+    .copy-right{
+      max-width: 100%; 
+      padding: 30px 0 16px;
+    }
+    .footer-products a {
+      color: #616161;
+      font-size: 11px;
+    }
+    footer p {
+      color: #616161;
+      font-size: 15px;
+    }
+    #nav-footer {
+      text-align: right;
+    }
+    #nav-footer a {
+      padding-right: 24px;
+    }
+    .region > a, #nav-footer {
+      padding-top: 3px!important;
+      font-size: 11px;
+      line-height: 16px;
+      color: #616161!important;
+    }
+    
+    .footer-products {
+      line-height: 33px;
+    }
+    .footer-products > li a {
+      text-decoration: none;
+    }
+    .footer-products > li a:hover {
+      text-decoration: underline;
+    }
+    .nav-footer > a:hover, .region > a:hover {
+      text-decoration: underline!important;
+      cursor: pointer;
+    }
+    .nav-footer > #microsoft {
+      text-decoration: none!important;
+      cursor: default;
+    }
+    footer {
+      background-color: #f2f2f2;
+    }
+
+
+    @media (max-width: 1399px) {
+      .navbar-collapse .nav-right .bi > a {
+        display: none!important;
+      }
+      }
+      @media (min-width: 992px) {
+        .more-hide {
+          display: none;
+        }
+      }
+      @media (max-width: 767px) {
+        .more-hide {
+          display: none;
+        }
+        .navbar-toggler {
+          order: 1;
+        }
+        .navbar-brand {
+          order: 2;
+          flex-grow: 1;
+          text-align: center;
+        }
+        .navbar-icons {
+          order: 3;
+        }
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .navbar-brand {
+          order: 2;
+        }
+
+        .navbar-icons {
+          order: 3;
+        }
+
+        .navbar-collapse {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 1;
+          background-color: #fff;
+          width: 100%;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-in-out;
+        }
+
+        .navbar-collapse.show {
+          max-height: 111vh;
+        }
+
+        .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+          padding-left: 20px;
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+
+        /* .nav-item {
+          margin: 0.5rem 0;
+        } */
+
+        .nav-link {
+          color: #333;
+        }
+
+        .nav-link:hover {
+          color: #000;
+        }
+        .slider .card-body {
+          z-index: 0!important;
+        }
+    }
+    @media (min-width: 768px){
+      .navbar-icons > i {
+        display: none!important;
+      }
+    }
+    @media (min-width:768px) and (max-width: 991px){
+      .hide {
+        display: none;
+      }
+    }
+    @media (min-width: 768px) {
+      .hide-sm {
+        display: none;
+      }
+    }
+    @media (max-width: 767px) {
+      .nav-right {
+        display: none!important;
+      }
+    }
+    @media (max-width: 991px) {
+      .nav-item {
+        padding-top: 2.5%;
+      }
+    }
+    @media (min-width: 1400px) {
+      .containers {
+        max-width: 1600px
+      }
+    }
+    @media (min-width: 1084px){
+      .containers {
+        padding-right: 5%;
+        padding-left: 5%;
+        width: 90%;
+        box-sizing: content-box;
+      }
+    }
+    @media (min-width: 1106px) and (max-width: 1335px){
+      .dropdown-menu  .other {
+        display: block;
+        width: 100%;
+      }
+      .nav-right .dropdown-menu {
+        width: 1000px;
+        margin-left: -800%;
+      }
+    }
+    @media (max-width: 1105px){
+      .dropdown-menu .developer {
+        display: block;
+        width: 100%;
+      }
+      .nav-right .dropdown-menu {
+        width: 800px;
+        margin-left: -750%;
+      }
+    }
+    @media (min-width: 1104px) {
+      .dropdown-menu .developer {
+        display: none;
+      }
+    }
+    @media (max-width: 1103px) {
+      .dropdown-menu  .other {
+        display: none;
+      }
+    }
+    @media (min-width: 1336px){
+      .dropdown-menu  .other {
+        display: none;
+      }
+    }
+    @media (max-width: 950px) {
+      .nav-right .dropdown-menu {
+        width: 750px;
+        margin-left: -580%;
+      }
+    }
+    @media (max-width: 820px){
+      .nav-right .dropdown-menu {
+        width: 700px;
+        margin-left: -520%;
+      }
+    }
+    @media(min-width: 860px) {
+      .small-pic {
+        display: none;
+      }
+    }
+    @media(max-width: 859px){
+      .big-pic {
+        display: none;
+      }
+    }
+    @media (max-width: 1084px){
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 540px){
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (min-width: 860px ) and (max-width: 1082px ) {
+      .xbox .card {
+        margin: auto;
+        height: auto;
+        margin-bottom: 24%;
+      }
+      .slider .card {
+        width: 100%;
+        margin: auto;
+        height: auto;
+        z-index: 1;
+        margin-bottom: 26%;
+      }
+      .xbox .card-img-overlay, .slider .card-img-overlay {
+        margin-top: 8%;
+      }
+      .xbox .card-body, .slider .card-body {
+        margin-left: 0;
+        width: 100%;
+        position: relative;
+        color: #000000!important;
+        background-color: white;
+        box-shadow: rgba(2,11,20,0.2) 0px 5px 5px;
+        height: auto;
+        width: auto;
+        padding: 48px;
+      }
+      .xbox .card-body {
+        margin-top: 25%;
+      }
+      .slider .card-body {
+        margin-top: 18%;
+      }
+      .xbox .card-title, .slider .card-title {
+        font-size: 24px;
+      }
+    }
+     @media (max-width: 859px){
+      header {
+        box-shadow: 0px 8px 10px -10px rgba(0,0,0,0.75);
+      }
+      .carousel {
+        margin-bottom: 0px!important;
+      }
+      .xbox .card-body, .slider .card-body {
+        margin-top: 0;
+        
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+
+      .xbox .card, .slider .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .xbox .card-body {
+        padding: 0;
+      }
+
+      .xbox .card-img, .slider .card-img {
+        flex: 1;
+        object-fit: cover;
+      }
+
+      .xbox .card-img-overlay, .slider .card-img-overlay {
+        position: relative;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+      }
+
+      .xbox .card-body, .slider .card-body {
+        z-index: 1;
+        color: #000000!important;
+      }
+    }
+    @media (max-width: 991px) {
+      .copy-right {
+        flex-direction: column;
+        align-items: start;
+      }
+      #nav-footer {
+        white-space: wrap!important;
+        text-align: start!important;
+      }
+      ul {
+        padding-left: 0;
+      }
+    }
+    
+  </style>
+  <title>Microsoft - Cloud, Computer, Apps & Gaming</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <i class="bi bi-search p-2" style="color: black"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav nav-hide me-auto mb-2 mb-lg-0" id="nav-itmes">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Microsoft 365</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Teams</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Windows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Surface</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hide" href="#">Xbox</a>
+          </li>
+          <li class="nav-item hide">
+            <a class="nav-link" href="#">Sale</a>
+          </li>
+          <li class="nav-item hide">
+            <a class="nav-link" href="#">Small Business</a>
+          </li>
+          <li class="nav-item hide">
+            <a class="nav-link" href="#">Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hide-sm" href="#">Software</a>
+          </li>
+          <li class="nav-item hide-sm">
+            <a class="nav-link" href="#">PCs & Devices</a>
+          </li>
+          <li class="nav-item hide-sm">
+            <a class="nav-link" href="#">Entertainment</a>
+          </li>
+          <li class="nav-item hide-sm">
+            <a class="nav-link" href="#">Business</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hide-sm" href="#">Developer & IT</a>
+          </li>
+          <li class="nav-item hide-sm">
+            <a class="nav-link" href="#">Other</a>
+          </li>
+          <li class="nav-item hide-sm">
+            <a class="nav-link" href="#">View Sitemap</a>
+          </li>
+            <div class="d-flex ">
+              <li class="nav-item dropdown pt-2 more-hide">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  More
+                </a>
+                <ul class="dropdown-menu" style="list-style: none;">
+                  <li><a class="dropdown-item" href="#">Xbox</a></li>
+                  <li><a class="dropdown-item" href="#">Sale</a></li>
+                  <li><a class="dropdown-item" href="#">Small Business</a></li>
+                  <li><a class="dropdown-item" href="#">Support</a></li>
+                </ul>
+              </li>
+            </div>
+        </ul>
+          <div class="d-flex nav-right" id="nav-right">
+            <li>
+              <div class="dropdown pe-2" id="all-microsoft">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-items">
+                  All Microsoft
+                </a>
+                <div class="text-start dropdown-menu">
+                  <div class="row align-items-start">
+                    <div class="col">
+                      <p class="mb-0">Software</p>
+                      <ul class="list-unstyled footer-products">
+                        <li>
+                          <a href="#!">Windows Apps</a>
+                        </li>
+                        <li>
+                          <a href="#!">AI</a>
+                        </li>
+                        <li>
+                          <a href="#!">OneDrive</a>
+                        </li>
+                        <li>
+                          <a href="#!">Outlook</a>
+                        </li>
+                        <li>
+                          <a href="#!">Skype</a>
+                        </li>
+                        <li>
+                          <a href="#!">OneNote</a>
+                        </li>
+                        <li>
+                          <a href="#!">Microsoft Teams</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col">
+                      <p class="mb-0">PCs & Devices</p>
+                      <ul class="list-unstyled footer-products">
+                        <li>
+                          <a href="#!">Shop Xbox</a>
+                        </li>
+                        <li>
+                          <a href="#!">Accessories</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col">
+                      <p class="mb-0">Entertainment</p>
+                      <ul class="list-unstyled footer-products">
+                        <li>
+                          <a href="#!">Xbox Game Pass Ultimate</a>
+                        </li>
+                        <li>
+                          <a href="#!">Xbox Live Gold</a>
+                        </li>
+                        <li>
+                          <a href="#!">Xbox games</a>
+                        </li>
+                        <li>
+                          <a href="#!">PC games</a>
+                        </li>
+                        <li>
+                          <a href="#!">Surface Studio</a>
+                        </li>
+                        <li>
+                          <a href="#!">Windows digital games</a>
+                        </li>
+                        <li>
+                          <a href="#!">Movies & TV</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col">
+                      <p class="mb-0">Business</p>
+                      <ul class="list-unstyled footer-products">
+                        <li>
+                          <a href="#!">Microsoft Cloud</a>
+                        </li>
+                        <li>
+                          <a href="#!">Microsoft Security</a>
+                        </li>
+                        <li>
+                          <a href="#!">Azure</a>
+                        </li>
+                        <li>
+                          <a href="#!">Dynamics 365</a>
+                        </li>
+                        <li>
+                          <a href="#!">Microsoft 365 for business</a>
+                        </li>
+                        <li>
+                          <a href="#!">Microsoft Industry</a>
+                        </li>
+                        <li>
+                          <a href="#!">Microsoft Power Platform</a>
+                        </li>
+                        <li>
+                          <a href="#!">Windows 365</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="developer"></div>
+                    <div class="col">
+                      <p class="mb-0">Developer & IT</p>
+                      <ul class="list-unstyled footer-products">
+                        <li>
+                          <a href="#!">Developer Center</a>
+                        </li>
+                        <li>
+                          <a href="#!">Documentation</a>
+                        </li>
+                        <li>
+                          <a href="#!">Microsoft Learn</a>
+                        </li>
+                        <li>
+                          <a href="#!">Microsoft Tech Community</a>
+                        </li>
+                        <li>
+                          <a href="#!">Azure Marketplace</a>
+                        </li>
+                        <li>
+                          <a href="#!">AppSource</a>
+                        </li>
+                        <li>
+                          <a href="#!">Visual Studio</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="other"></div>
+                    <div class="col">
+                      <p class="mb-0">Other</p>
+                      <ul class="list-unstyled footer-products">
+                        <li>
+                          <a href="#!">Microsoft Rewards</a>
+                        </li>
+                        <li>
+                          <a href="#!">Free downloads</a>
+                        </li>
+                        <li>
+                          <a href="#!">Education</a>
+                        </li>
+                        <li>
+                          <a href="#!">Gift cards</a>
+                        </li>
+                        <li>
+                          <a href="#!">Licensing</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <i role="button" class="bi bi-search pe-3 pt-2 pb-2 ps-2" id="search-icon"> <a>Search</a> </i>
+            <i class="bi bi-cart pe-3 pt-2 pb-2 ps-2" id="cart-icon"> <a>Cart</a> </i>
+            <i class="bi bi-person-plus pe-3 pt-2 pb-2 ps-2" id="signin-icon"> <a>Sign in</a> </i>
+          </div>
+      </div>
+      <div class="navbar-icons">
+        <i class="bi bi-cart p-2"></i>
+        <i class="bi bi-person-plus p-2"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!--Slider-->
+  <header class="slider">
+      <div id="carouselExampleAutoplaying" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card d-block">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-Laptop-5-Mobile-Mouse-FY23BTS:VP5-1920x600" class="card-img big-pic">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-Signature-Keyboard-Pen-FY23BTS:VP3-1083x600" class="card-img small-pic"/>
+                <div class="card-img-overlay">
+                    <div class="card-body text-dark">
+                      <p class="card-title">Xbox Series S</p>
+                      <p class="card-text">Next-gen performance in the smallest Xbox ever</p>
+                      <a href="#" class="btn btn-primary" role="button">Shop now</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card d-block">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-Signature-Keyboard-Pen-FY23BTS:VP5-1920x600" class="card-img big-pic">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Laptop-Go-2-Mobile-Mouse-Platinum-FY23BTS:VP3-1083x600" class="card-img small-pic"/>
+                <div class="card-img-overlay">
+                    <div class="card-body text-dark">
+                      <p class="card-title">Xbox Series S</p>
+                      <p class="card-text">Next-gen performance in the smallest Xbox ever</p>
+                      <a href="#" class="btn btn-primary" role="button">Shop now</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+  </header>
+
+  <!-- Microsoft Products Icons -->
+  <section class="products pt-5" style="margin-bottom: 70px;">
+    <div class="containers">
+      <div class="icons">
+        <div class="row text-center justify-content-center">
+        <div class="col p-2">
+          <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Quick-Link-Icon-80x80-Microsoft-365?wid=40&amp;hei=40"> <br>
+          <a href="#">Choose your Microsoft 365</a>
+        </div>
+      <div class="col p-2">
+          <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-go2-link-list-120x120?wid=40&amp;hei=40"> <br>
+          <a href="#">Shop Surface devices</a>
+        </div>
+      <div class="col p-2">
+          <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/icon-LL-Xbox-Logo-80x80?wid=40&amp;hei=40"> <br>
+          <a href="#">Buy Xbox games and consoles</a>
+        </div>
+      <div class="col p-2">
+          <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Book_Icon_40x40?wid=40&amp;hei=40"> <br>
+          <a href="#">Shop for students</a>
+        </div>
+      <div class="col p-2">
+          <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/icon-LL-Briefcase-Fluent-80x80?wid=40&amp;hei=40"> <br>
+          <a href="#">Shop Business</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section> 
+
+
+  <!-- Products Cards -->
+  <section>
+    <div class="containers">
+      <div class="row">
+        <div class="cards">
+          <div>
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Test-Surface-Laptop-5-Sandstone-02?wid=380&amp;hei=213&amp;fit=crop">
+            <h3>Surface Pro 9</h3>
+            <p>Tablet versatility and laptop power - all in one ultra-portable device.</p>
+            <a href="#">Shop now <i class="bi bi-chevron-right"></i></a>
+          </div>
+          <div>
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-5-M1-Platinum-01-1?wid=380&amp;hei=213&amp;fit=crop">
+            <h3>Surface Pro 9</h3>
+            <p>Tablet versatility and laptop power - all in one ultra-portable device.</p>
+            <a href="#">Shop now <i class="bi bi-chevron-right"></i></a>
+          </div>
+          <div>
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Surface-Laptop-Studio-01-CP?wid=380&amp;hei=213&amp;fit=crop">
+            <h3>Surface Pro 9</h3>
+            <p>Tablet versatility and laptop power - all in one ultra-portable device.</p>
+            <a href="#">Shop now <i class="bi bi-chevron-right"></i></a>
+          </div>
+          <div>
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Bing-AI-No-Text?wid=380&amp;hei=213&amp;fit=crop">
+            <h3>Surface Pro 9</h3>
+            <p>Tablet versatility and laptop power - all in one ultra-portable device.</p>
+            <a href="#">Shop now <i class="bi bi-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Xbox -->
+  <section class="xbox mb-5">
+    <div class="containers">
+      <div class="card">
+          <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Slim-Multi-Canvas-AEM-Xbox-Elderberry:VP5-1596x600" class="card-img">
+          <div class="card-img-overlay">
+          <div class="card-body text-light">
+              <p class="card-title">Xbox Series S</p>
+              <p class="card-text">Next-gen performance in the smallest Xbox ever</p>
+              <a href="#" class="btn btn-primary mb-2" role="button">Shop now</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- For business -->
+  <div class="containers" style="margin-top: 100px">
+    <h2>For Business</h2>
+  </div>
+  <section class="For-Business cards containers">
+    <div>
+      <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Pro-9-for-Business-Family-2?wid=380&amp;hei=213&amp;fit=crop">
+      <div class="card-header">
+        <span class="p-1" style="background-color: #ffb900; font-weight: 600; padding: 0.375em 0.75em!important;">
+          New
+        </span>
+      </div>
+      <h3 style="margin-top: 10px">Surface Pro 9 for Business</h3>
+      <p>Empower flexible, all-day impact with tablet portability and laptop performance.</p>
+      <a href="#">Start your free trial <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div>
+      <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Brand-Hybrid-Work?wid=380&amp;hei=213&amp;fit=crop">
+      <h3>Thrive in hybrid world</h3>
+      <p>Discover tools, resources and strategies to help your employees succeed in the new world of flexible work.</p>
+      <a href="#">Shop now <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div>
+      <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-365-For-Business-Woman-Teams-Call?wid=380&amp;hei=213&amp;fit=crop">
+      <h3>Welcome to your Windows 365 Cloud PC</h3>
+      <p>Securely stream your Windows experience from the Microsoft cloud to any device.</p>
+      <a href="#">Get it today <i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div>
+      <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Visual-Studio-Icon?wid=380&amp;hei=213&amp;fit=crop">
+      <h3>Surface Pro 9</h3>
+      <p>Tablet versatility and laptop power - all in one ultra-portable device.</p>
+      <a href="#">Shop now <i class="bi bi-chevron-right"></i></a>
+    </div>
+</section>
+
+  <!-- Follow Microsoft -->
+  <section class="socials containers d-flex mb-5">
+    <div class="microsoft-socials d-flex d-flex-start align-items-center justify-content-start ">
+      <span class="text-center justify-content-center" style="font-size: 20px;">Follow Microsoft</span>
+      <div class="social-media-container d-flex flex-row text-center justify-content-center">
+        <i class="bi bi-facebook p-3"></i>
+        <i class="bi bi-twitter p-3"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Backup Button -->
+      <div id="backup-button">
+        <button class="mb-5"><i class="bi bi-arrow-up"></i> Back to top</button>
+      </div>
+
+  <!-- Footer -->
+    <footer class="text-start text-lg-start" id="main-footer">
+      <div class="containers pt-4">
+        <div class="row">
+          <div class="col-lg-2 col-md-4 mb-4">
+            <p class="mb-0" style="color: #616161; font-weight: 600">What's new</p>
+    
+            <ul class="list-unstyled footer-products">
+              <li>
+                <a href="#!">Surface Pro 9</a>
+              </li>
+              <li>
+                <a href="#!">Surface Laptop 5</a>
+              </li>
+              <li>
+                <a href="#!">Surface Studio 2+</a>
+              </li>
+              <li>
+                <a href="#!">Surface Lapto Go 2</a>
+              </li>
+              <li>
+                <a href="#!">Surface Studio</a>
+              </li>
+              <li>
+                <a href="#!">Microsoft 365</a>
+              </li>
+              <li>
+                <a href="#!">Windows 11 apps</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <p class="mb-0" style="color: #616161; font-weight: 600">What's new</p>
+    
+            <ul class="list-unstyled footer-products">
+              <li>
+                <a href="#!" >Surface Pro 9</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Laptop 5</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio 2+</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Lapto Go 2</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio</a>
+              </li>
+              <li>
+                <a href="#!" >Microsoft 365</a>
+              </li>
+              <li>
+                <a href="#!" >Windows 11 apps</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <p class="mb-0" style="color: #616161; font-weight: 600">What's new</p>
+    
+            <ul class="list-unstyled footer-products">
+              <li>
+                <a href="#!" >Surface Pro 9</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Laptop 5</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio 2+</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Lapto Go 2</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio</a>
+              </li>
+              <li>
+                <a href="#!" >Microsoft 365</a>
+              </li>
+              <li>
+                <a href="#!" >Windows 11 apps</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <p class="mb-0" style="color: #616161; font-weight: 600">What's new</p>
+    
+            <ul class="list-unstyled footer-products">
+              <li>
+                <a href="#!" >Surface Pro 9</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Laptop 5</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio 2+</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Lapto Go 2</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio</a>
+              </li>
+              <li>
+                <a href="#!" >Microsoft 365</a>
+              </li>
+              <li>
+                <a href="#!" >Windows 11 apps</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <p class="mb-0" style="color: #616161; font-weight: 600">What's new</p>
+    
+            <ul class="list-unstyled footer-products">
+              <li>
+                <a href="#!" >Surface Pro 9</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Laptop 5</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio 2+</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Lapto Go 2</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio</a>
+              </li>
+              <li>
+                <a href="#!" >Microsoft 365</a>
+              </li>
+              <li>
+                <a href="#!" >Windows 11 apps</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <p class="mb-0" style="color: #616161; font-weight: 600">What's new</p>
+    
+            <ul class="list-unstyled footer-products">
+              <li>
+                <a href="#!" >Surface Pro 9</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Laptop 5</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio 2+</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Lapto Go 2</a>
+              </li>
+              <li>
+                <a href="#!" >Surface Studio</a>
+              </li>
+              <li>
+                <a href="#!" >Microsoft 365</a>
+              </li>
+              <li>
+                <a href="#!" >Windows 11 apps</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copy-right d-flex justify-content-between" >
+          <div class="region d-flex">
+            <i class="bi bi-globe-americas pe-2"></i>
+            <a>English (New Zealand)</a>
+          </div>
+          <nav id="nav-footer">
+            <ul class="nav-footer">
+              <a>Contact Microsoft</a>
+              <a>Privacy</a>
+              <a>Terms of use</a>
+              <a>Trademarks</a>
+              <a>About our ads</a>
+              <a id="microsoft">Microsoft 2023</a>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      $(document).ready(function() {
+        $('.navbar-toggler').on('click', function() {
+          $('.navbar-collapse').toggleClass('show');
+          $('.navbar-toggler').toggleClass('collapsed');
+          if ($('.navbar-collapse').hasClass('show')) {
+            $('.navbar').append($('.navbar-collapse'));
+          } else {
+            $('.navbar-collapse').insertBefore($('.navbar-icons'));
+          }
+        });
+      });
+    </script>
+  <script>
+    const searchIcon = document.querySelector('#search-icon');
+    const searchContainer = document.querySelector('.nav-right');
+  
+    searchIcon.addEventListener('click', function() {
+      const searchBarHtml = '<div id="search-bar"><input type="text" placeholder="Search Microsoft.com"></div><button id="cancel-btn">Cancel</button>';
+      
+      const elements = document.querySelectorAll("#search-icon, #cart-icon, #signin-icon, #nav-itmes, #dropdown-items, #nav-right");
+      elements.forEach(element => element.style.display = "none");
+
+      searchContainer.style.width = '100%';
+      
+      if (searchContainer.querySelector('#search-bar')) {
+        searchContainer.querySelector('#search-bar').remove();
+      } else {
+        searchContainer.insertAdjacentHTML('beforeend', searchBarHtml);
+      }
+  
+      const cancelBtn = document.querySelector('#cancel-btn');
+      cancelBtn.addEventListener('click', function() {
+        elements.forEach(element => element.style.display = "block");
+        document.getElementById("nav-itmes").style.display = "flex";
+        // document.getElementById("dropdown-items").style.marginBottom = "10px";
+        searchContainer.querySelector('#search-bar').remove();
+        searchContainer.querySelector('#cancel-btn').remove();
+        searchContainer.style.width = "";
+      });
+    });
+
+    window.addEventListener("scroll", function() {
+
+      const button = document.getElementById("backup-button");
+
+      if (window.scrollY > 0){
+        button.style.opacity = 1;
+      }
+      else if (window.scrollY === 0){
+        button.style.opacity = 0;
+      }
+    });
+
+  </script>
+  
+</body>
+</html>
